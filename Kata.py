@@ -10,47 +10,31 @@ def saisirValeur(liste):
 def afficheDiamant(liste):
     cote = saisirValeur(liste)
     # Haut du diamant
-    i = 0
-    while i < cote:
-        j = i
-        k = i
-        l = i
+    for i in range(0, cote - 1):
         rendu = ''
-        while j < cote - 1:
+        for j in range(i, cote - 2):
             rendu += ' '
-            j += 1
         rendu += liste[i]
-        while k > 0:
+        for k in range(i, 0):
             rendu += ' '
-            k -= 1
-        while l > 1:
+        for l in range(i, 1):
             rendu += ' '
-            l -= 1
         if i != 0:
             rendu += liste[i]
         print(rendu)
-        i += 1
     # Bas du diamant
-    i = cote - 2
-    while i >= 0:
-        j = 1
-        k = cote
-        l = cote
+    for i in range(cote, 0):
         rendu = ''
-        while j < cote - i:
+        for j in range(1, cote - i):
             rendu += ' '
-            j += 1
         rendu += liste[i]
-        while k > cote - i:
+        for k in range(cote, cote - i):
             rendu += ' '
-            k -= 1
-        while l > cote - i + 1:
+        for l in range(cote, cote - i + 1):
             rendu += ' '
-            l -= 1
         if i != 0:
             rendu += liste[i]
         print(rendu)
-        i -= 1
 
 if __name__ == '__main__':
     liste = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
